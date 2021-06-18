@@ -39,12 +39,12 @@ page = input("搜索的页数")
 print(page)
 pager = int(page)+1
 def main():
-    for i in range(1, 2):  #1循环下载50张图像，循环10次
+    for i in range(1, 2):  #1循环下载所有图像，循环1次
         allimg_id = get_img_id(i)  # 取图像ID
         for j in range(0, len(allimg_id)):
             download_img(allimg_id[j])  # 通过ID下载图像
             n = j + 1
-            print("(" + str(i) + "/10),(" + str(n) + "/" + str(len(allimg_id)) + ")")  # 显示进度情况
+            print("(str(i)),(" + str(n) + "/" + str(len(allimg_id)) + ")")  # 显示进度情况
             time.sleep(1)  # 为了不增加服务器的负荷，适当设定待机时间，单位为秒
 
 def get_img_id(a):
